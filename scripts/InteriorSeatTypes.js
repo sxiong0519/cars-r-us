@@ -2,7 +2,7 @@ import { getInteriorSeatTypes } from "./database.js"
 
 const seatTypes = getInteriorSeatTypes()
 
-export const JewelryStyles = () => {
+export const seats = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements

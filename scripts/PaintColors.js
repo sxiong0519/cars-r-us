@@ -2,7 +2,7 @@ import { getPaintColors } from "./database.js"
 
 const paintColors = getPaintColors()
 
-export const JewelryStyles = () => {
+export const paint = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements

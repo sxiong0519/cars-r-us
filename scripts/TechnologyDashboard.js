@@ -2,13 +2,13 @@ import { getTechnologyDashboards } from "./database.js"
 
 const technologyDashboards = getTechnologyDashboards()
 
-export const JewelryStyles = () => {
+export const dashboards = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
     const listItemsArray = technologyDashboards.map(technologyDashboard => {
         return `<li>
-        <input type="radio" name="technologyDashboard" value="${technologyDashboard.id}" /> ${technologyDashboard.material}
+        <input type="radio" name="technologyDashboard" value="${technologyDashboard.id}" /> ${technologyDashboard.package}
         </li>`
         }
     )

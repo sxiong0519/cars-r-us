@@ -2,13 +2,13 @@ import { getWheels } from "./database.js"
 
 const wheels = getWheels()
 
-export const JewelryStyles = () => {
+export const theWheels = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
     const listItemsArray = wheels.map(wheel => {
         return `<li>
-        <input type="radio" name="wheel" value="${wheel.id}" /> ${wheel.material}
+        <input type="radio" name="wheel" value="${wheel.id}" /> ${wheel.wheels}
         </li>`
         }
     )
