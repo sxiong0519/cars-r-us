@@ -1,5 +1,7 @@
 const options = {
-    orderBuilder: {},
+    orderBuilder: {
+
+    },
     paintColors: [
         {
             id: 1,
@@ -9,11 +11,13 @@ const options = {
         {
             id: 2,
             color: 'midnight blue',
-            price: 10},
+            price: 10
+        },
         {
             id: 3,
             color: 'firebrick red',
-            price: 12},
+            price: 12
+        },
         {
             id: 4,
             color: 'spring green',
@@ -45,22 +49,22 @@ const options = {
     technologyDashboards: [
         {
             id: 1,
-            package: 'basic package',
+            dashboard: 'basic package',
             price: 375
         },
         {
             id: 2,
-            package: 'navigation package',
+            dashboard: 'navigation package',
             price: 425
         },
         {
             id: 3,
-            package: 'visibility package',
+            dashboard: 'visibility package',
             price: 500
         },
         {
             id: 4,
-            package: 'ultra package',
+            dashboard: 'ultra package',
             price: 675
         }
     ],
@@ -92,39 +96,44 @@ const options = {
             paintColorsId: 3,
             interiorSeatTypesId: 4,
             technologyDashboardsId: 2,
-            wheelsId: 2
+            wheelsId: 2,
+            timestamp: 1614659931693
         }
     ]
 }
 
 export const getPaintColors = () => {
-    return options.paintColors.map(paintColor => ({...paintColor}))
+    return [...options.paintColors]
 }
 
 export const getInteriorSeatTypes = () => {
-    return options.interiorSeatTypes.map(interiorSeatType => ({...interiorSeatType}))
+    return [...options.interiorSeatTypes]
 }
 
 export const getTechnologyDashboards = () => {
-    return options.technologyDashboards.map(technologyDashboard => ({...technologyDashboard}))
+    return [...options.technologyDashboards]
 }
 
 export const getWheels = () => {
-    return options.wheels.map(wheel => ({...wheel}))
+    return [...options.wheels]
+}
+
+export const getOrders = () => {
+    return [...options.customerOrders]
 }
 
 export const setInteriorSeatType = (id) => {
-    options.orderBuilder.interiorSeatTypeId = id
+    options.orderBuilder.interiorSeatTypesId = id
 }
 
 export const setTechnologyDashboard = (id) => {
-    options.orderBuilder.technologyDashboardId = id
+    options.orderBuilder.technologyDashboardsId = id
 }
 export const setPaintColor = (id) => {
-    options.orderBuilder.paintColorId = id
+    options.orderBuilder.paintColorsId = id
 }
 export const setWheel = (id) => {
-    options.orderBuilder.wheelId = id
+    options.orderBuilder.wheelsId = id
 }
 
 export const addCustomOrder = () => {
