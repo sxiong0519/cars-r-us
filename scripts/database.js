@@ -126,3 +126,24 @@ export const setPaintColor = (id) => {
 export const setWheel = (id) => {
     options.orderBuilder.wheelId = id
 }
+
+export const addCustomOrder = () => {
+    // Copy the current state of user choices
+    const newOrder = {...options.orderBuilder}
+
+    // Add a new primary key to the object
+    const lastIndex = options.customerOrders.length - 1
+    newOrder.id = options.customerOrders[lastIndex].id + 1
+
+    // Add a timestamp to the order
+    newOrder.timestamp = Date.now()
+
+    // Add the new order object to custom orders state
+    options.customerOrders.push(newOrder)
+
+    // Reset the temporary state for user choices
+    options.orderBuilder = {}
+
+    // Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}

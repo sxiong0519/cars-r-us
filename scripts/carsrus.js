@@ -2,7 +2,13 @@ import { paint } from "./PaintColors.js"
 import { seats } from "./InteriorSeatTypes.js"
 import { dashboards } from "./TechnologyDashboard.js"
 import { theWheels } from "./Wheels.js"
+import { addCustomOrder } from "./database.js"
 
+document.addEventListener("click", (event) => {
+    if (event.target.id === "orderButton") {
+        addCustomOrder()
+    }
+})
 
 export const carsrus = () => {
     return `
@@ -25,6 +31,10 @@ export const carsrus = () => {
                 <h2>Wheels</h2>
                 ${theWheels()}
             </section>
+        </article>
+
+        <article>
+            <button id="orderButton">Create Custom Order</button>
         </article>
     `
 }
